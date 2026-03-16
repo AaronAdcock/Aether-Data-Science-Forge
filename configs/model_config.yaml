@@ -1,0 +1,20 @@
+# Enterprise Model Configuration
+model:
+  name: "xgboost_classifier"
+  params:
+    max_depth: 6
+    learning_rate: 0.1
+    n_estimators: 100
+    objective: "binary:logistic"
+    random_state: 42
+
+pipeline:
+  data_path: "data/raw_data.csv"
+  test_size: 0.2
+  validation_split: 0.1
+  feature_selection: true
+  scaling: true
+
+monitoring:
+  drift_threshold: 0.05
+  enable_prometheus: true
